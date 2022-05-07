@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="jumbotron">
+            <table class="table">
+               <thead>
+                  <th>Id#</th>
+                  <th>Project Id</th>
+                  <th>Note</th>
+                  <th>Active Date</th>
+                  <!-- <th>Actions</th> -->
+               </thead>
+               <tbody>
+                  <% notes?.forEach(function(note) { %>
+                  <tr>
+                     <td><%= note.id %></td>
+                     <td><%= note.project_id %></td>
+                     <td class="w-25"><%= note.note %></td>
+                     <td><%= note.active_date%></td>
+                  </tr>
+                  <% }); %>
+               </tbody>
+            </table>
+         </div>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>

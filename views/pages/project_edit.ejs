@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="jumbotron row d-grid mx-auto">
+                  <form action="/update" method="post" class="col">
+                     <input
+                        type="hidden"
+                        value="<%= project.id %>"
+                        name="projectId"
+                     />
+                     <h2 class="text-muted">Create a Project</h2>
+                     <br />
+                     <p>Please Enter the following information :</p>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="pTitle">Project Title</label>
+                        </div>
+                        <div class="col">
+                           <input
+                              type="text"
+                              id="pTtile"
+                              name="pTitle"
+                              value="<%= project.project_title %>"
+                           />
+                        </div>
+                     </div>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="pDesc">Project Description</label>
+                           <br />
+                        </div>
+                        <div class="col">
+                           <input
+                              type="text"
+                              id="pDesc"
+                              name="pDesc"
+                              value="<%= project.project_description %>"
+                           />
+                        </div>
+                     </div>
+
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="startDate">Start Date</label>
+                           <br />
+                        </div>
+                        <div class="col">
+                           <input
+                              type="date"
+                              id="startDate"
+                              name="startDate"
+                              value="<%= project.project_start_dt %>"
+                           />
+                        </div>
+                     </div>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="dueDate">Due Date</label>
+                        </div>
+                        <div class="col">
+                           <input
+                              type="date"
+                              id="dueDate"
+                              name="dueDate"
+                              value="<%= project.project_due_dt %>"
+                           />
+                        </div>
+                     </div>
+                     <br /><br />
+                     <button type="submit" class="btn btn-primary">
+                        Save Project
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="jumbotron row d-grid mx-auto">
+                  <form action="/projects" method="post" class="col">
+                     <h2 class="text-muted">Create a Project</h2>
+                     <br />
+                     <p>Please Enter the following information :</p>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="pTitle">Project Title</label>
+                        </div>
+                        <div class="col">
+                           <input type="text" id="pTtile" name="pTitle" />
+                        </div>
+                     </div>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="pDesc">Project Description</label>
+                           <br />
+                        </div>
+                        <div class="col">
+                           <input type="text" id="pDesc" name="pDesc" />
+                        </div>
+                     </div>
+
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="startDate">Start Date</label>
+                           <br />
+                        </div>
+                        <div class="col">
+                           <input type="date" id="startDate" name="startDate" />
+                        </div>
+                     </div>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="dueDate">Due Date</label>
+                        </div>
+                        <div class="col">
+                           <input type="date" id="dueDate" name="dueDate" />
+                        </div>
+                     </div>
+                     <br /><br />
+                     <button type="submit" class="btn btn-primary">
+                        Submit Project
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>

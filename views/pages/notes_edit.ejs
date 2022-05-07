@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="jumbotron row d-grid mx-auto">
+                  <form action="/edit-note" method="post" class="col">
+                    <input
+                    type="hidden"
+                    value="<%= notes.id %>"
+                    name="notesId"
+                 />
+                 <input
+                 type="hidden"
+                 value="<%= notes.project_id %>"
+                 name="projectId"
+              />
+                     <h2 class="text-muted">Edit a Note</h2>
+                     <br />
+                     <p>Please Enter the following information :</p>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="note">Note</label>
+                        </div>
+                        <div class="col">
+                           <input
+                           type="text"
+                              id="note"
+                              class="w-75"
+                              name="note"
+                              value="<%= notes.note %>"
+                           ></input>
+                        </div>
+                     </div>
+                     <div class="form-group row py-2">
+                        <div class="col">
+                           <label for="pDesc">Active Date</label>
+                           <br />
+                        </div>
+                        <div class="col">
+                           <input type="date" id="aDate" name="aDate" value="<%= notes.active_date %>" />
+                        </div>
+                     </div>
+                     <br /><br />
+                     <button type="submit" class="btn btn-primary">
+                        Submit Note
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>
